@@ -13,10 +13,11 @@ function PageHead({ dept }) {
         slot={`department-${dept.slug}-banner`}
         alt={dept.imageAlt}
         aspect="21/9"
+        placeholder={false}
       />
       <Link
         to="/departments"
-        className="mt-6 inline-block text-xs font-bold uppercase tracking-widest text-ink/60 transition-colors duration-200 hover:text-ink"
+        className="inline-block text-xs font-bold uppercase tracking-widest text-ink/60 transition-colors duration-200 hover:text-ink"
       >
         ← All Departments
       </Link>
@@ -74,7 +75,13 @@ function MissionsContent({ section, image }) {
       ))}
 
       {image && (
-        <ImageBlock slot={image.slot} alt={image.alt} aspect="16/9" className="mt-8" />
+        <ImageBlock
+          slot={image.slot}
+          alt={image.alt}
+          aspect="16/9"
+          className="mt-8"
+          placeholder={false}
+        />
       )}
       <h3 className="pt-8 text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
         {section.missionsHeading}
@@ -260,13 +267,14 @@ function LongBody({ dept, sections }) {
             return (
               <section key={section.id} id={section.id} className="scroll-mt-36">
                 {bannerAbove && (
-                  <ImageBlock slot={image.slot} alt={image.alt} aspect="16/9" />
+                  <ImageBlock
+                    slot={image.slot}
+                    alt={image.alt}
+                    aspect="16/9"
+                    placeholder={false}
+                  />
                 )}
-                <h2
-                  className={`${
-                    bannerAbove ? 'mt-6 ' : ''
-                  }text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl`}
-                >
+                <h2 className="text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
                   {section.heading}
                 </h2>
                 <div className="mt-6">

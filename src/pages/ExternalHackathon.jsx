@@ -10,8 +10,9 @@ export default function ExternalHackathon() {
             slot="hackathon-hero"
             alt="Team collaborating at a hackathon"
             aspect="21/9"
+            placeholder={false}
           />
-          <h1 className="mt-10 text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
+          <h1 className="text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
             External Hackathon
           </h1>
         </div>

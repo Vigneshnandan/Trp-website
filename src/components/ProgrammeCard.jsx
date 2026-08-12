@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import ImageBlock from './ImageBlock'
 
-export default function ProgrammeCard({ dept, featured = false }) {
+export default function ProgrammeCard({ dept, featured = false, placeholder = true }) {
   return (
     <article
       className={
@@ -14,6 +14,7 @@ export default function ProgrammeCard({ dept, featured = false }) {
         slot={dept.imageSlot}
         alt={dept.imageAlt}
         aspect="16/9"
+        placeholder={placeholder}
         className={featured ? 'w-full shrink-0 lg:w-1/3' : 'w-full'}
       />
       <div className="lg:flex-1">

@@ -43,6 +43,7 @@ export default function ImageBlock({
   aspect = '16/9',
   className = '',
   eager = false,
+  placeholder = true,
 }) {
   const [failed, setFailed] = useState(false)
   const src = `/images/${slot}.jpg`
@@ -54,6 +55,7 @@ export default function ImageBlock({
   }, [slot])
 
   if (failed) {
+    if (!placeholder) return null
     return (
       <Placeholder
         alt={alt}
