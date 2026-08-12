@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #000000;
-  --color-accent: #f2e63d;
-  --color-cream: #f7f5f0;
+  --color-ink: #0b2545;
+  --color-accent: #2f6fed;
+  --color-cream: #f5f9ff;
+  --color-accent-soft: #dcebff;
 
   --font-display: "Archivo", system-ui, -apple-system, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -49,7 +50,7 @@
   }
 
   .hero-accent {
-    @apply bg-accent;
+    @apply bg-gradient-to-br from-accent-soft to-white;
   }
 
   .eyebrow {

@@ -1,12 +1,19 @@
 import { departments } from '../data/departments'
 import ProgrammeCard from '../components/ProgrammeCard'
+import ImageBlock from '../components/ImageBlock'
 
 export default function Departments() {
   const [featured, ...rest] = departments
 
   return (
     <section className="container-site py-20 sm:py-24">
-      <h1 className="text-4xl font-black uppercase leading-tight text-ink sm:text-5xl">
+      <ImageBlock
+        slot="departments-index-banner"
+        alt="Computing labs and classrooms"
+        aspect="21/9"
+      />
+
+      <h1 className="mt-10 text-4xl font-black uppercase leading-tight text-ink sm:text-5xl">
         Departments
       </h1>
 

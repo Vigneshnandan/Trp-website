@@ -4,13 +4,19 @@ import { getDepartment } from '../data/departments'
 import { departmentContent } from '../data/departmentContent'
 import MarkingList from '../components/MarkingList'
 import PlaceholderBlock from '../components/PlaceholderBlock'
+import ImageBlock from '../components/ImageBlock'
 
 function PageHead({ dept }) {
   return (
     <section className="container-site pt-10 sm:pt-14">
+      <ImageBlock
+        slot={`department-${dept.slug}-banner`}
+        alt={dept.imageAlt}
+        aspect="21/9"
+      />
       <Link
         to="/departments"
-        className="text-xs font-bold uppercase tracking-widest text-ink/60 transition-colors duration-200 hover:text-ink"
+        className="mt-6 inline-block text-xs font-bold uppercase tracking-widest text-ink/60 transition-colors duration-200 hover:text-ink"
       >
         ← All Departments
       </Link>
@@ -36,7 +42,7 @@ function MissionBody({ mission }) {
   )
 }
 
-function MissionsContent({ section }) {
+function MissionsContent({ section, image }) {
   const [activeMission, setActiveMission] = useState(0)
   const active = activeMission ?? 0
 
@@ -67,6 +73,9 @@ function MissionsContent({ section }) {
         </p>
       ))}
 
+      {image && (
+        <ImageBlock slot={image.slot} alt={image.alt} aspect="16/9" className="mt-8" />
+      )}
       <h3 className="pt-8 text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
         {section.missionsHeading}
       </h3>
@@ -88,7 +97,7 @@ function MissionsContent({ section }) {
               onClick={() => setActiveMission(index)}
               className={`rounded-lg border-2 px-4 py-2.5 font-display text-sm font-bold uppercase tracking-wide transition-colors duration-200 ${
                 active === index
-                  ? 'border-ink bg-accent text-ink'
+                  ? 'border-ink bg-accent text-white'
                   : 'border-ink/15 bg-white text-ink/70 hover:border-ink hover:text-ink'
               }`}
             >
@@ -104,7 +113,7 @@ function MissionsContent({ section }) {
           className="mt-6 rounded-2xl border-2 border-accent bg-white p-6 sm:p-8"
         >
           <div className="flex flex-wrap items-center gap-4">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-base font-black text-ink">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-base font-black text-white">
               {String(active + 1).padStart(2, '0')}
             </span>
             <h4 className="font-display text-lg font-extrabold uppercase leading-snug text-ink sm:text-xl">
@@ -133,7 +142,7 @@ function MissionsContent({ section }) {
                 className="flex w-full items-center justify-between gap-3 px-5 py-4 text-left"
               >
                 <span className="flex min-w-0 items-center gap-3">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-sm font-black text-ink">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-sm font-black text-white">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="font-display text-base font-extrabold uppercase leading-snug text-ink">
@@ -163,7 +172,7 @@ function MissionsContent({ section }) {
   )
 }
 
-function SectionContent({ section }) {
+function SectionContent({ section, image }) {
   if (section.kind === 'paragraphs') {
     return (
       <div className="space-y-5">
@@ -179,7 +188,7 @@ function SectionContent({ section }) {
     return <PlaceholderBlock />
   }
   if (section.kind === 'missions') {
-    return <MissionsContent section={section} />
+    return <MissionsContent section={section} image={image} />
   }
   return null
 }
@@ -213,7 +222,7 @@ function StickySubnav({ sections }) {
             href={`#${section.id}`}
             className={`whitespace-nowrap rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors duration-200 ${
               active === section.id
-                ? 'bg-accent text-ink'
+                ? 'bg-accent text-white'
                 : 'text-ink/60 hover:bg-ink/5 hover:text-ink'
             }`}
           >
@@ -225,22 +234,50 @@ function StickySubnav({ sections }) {
   )
 }
 
-function LongBody({ sections }) {
+const CSE_SECTION_IMAGES = {
+  curriculum: {
+    slot: 'department-cse-curriculum',
+    alt: 'Classroom and lab session',
+  },
+  missions: {
+    slot: 'department-cse-year-missions',
+    alt: 'Students at a coding hackathon',
+  },
+}
+
+function LongBody({ dept, sections }) {
+  const sectionImages =
+    dept.slug === 'computer-science-engineering' ? CSE_SECTION_IMAGES : {}
+
   return (
     <>
       <StickySubnav sections={sections} />
       <div className="container-site pb-24">
         <div className="mt-14 space-y-20">
-          {sections.map((section) => (
-            <section key={section.id} id={section.id} className="scroll-mt-36">
-              <h2 className="text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
-                {section.heading}
-              </h2>
-              <div className="mt-6">
-                <SectionContent section={section} />
-              </div>
-            </section>
-          ))}
+          {sections.map((section) => {
+            const image = sectionImages[section.id]
+            const bannerAbove = image && section.kind !== 'missions'
+            return (
+              <section key={section.id} id={section.id} className="scroll-mt-36">
+                {bannerAbove && (
+                  <ImageBlock slot={image.slot} alt={image.alt} aspect="16/9" />
+                )}
+                <h2
+                  className={`${
+                    bannerAbove ? 'mt-6 ' : ''
+                  }text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl`}
+                >
+                  {section.heading}
+                </h2>
+                <div className="mt-6">
+                  <SectionContent
+                    section={section}
+                    image={section.kind === 'missions' ? image : null}
+                  />
+                </div>
+              </section>
+            )
+          })}
         </div>
       </div>
     </>
@@ -291,7 +328,7 @@ export default function DepartmentDetail() {
     <>
       <PageHead dept={dept} />
       {content.kind === 'long' ? (
-        <LongBody sections={content.sections} />
+        <LongBody dept={dept} sections={content.sections} />
       ) : (
         <ShortBody sections={content.sections} />
       )}

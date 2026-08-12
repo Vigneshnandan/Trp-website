@@ -1,11 +1,17 @@
 import PlaceholderBlock from '../components/PlaceholderBlock'
+import ImageBlock from '../components/ImageBlock'
 
 export default function ExternalHackathon() {
   return (
     <>
       <section className="hero-accent">
         <div className="container-site py-20 sm:py-28">
-          <h1 className="text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
+          <ImageBlock
+            slot="hackathon-hero"
+            alt="Team collaborating at a hackathon"
+            aspect="21/9"
+          />
+          <h1 className="mt-10 text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
             External Hackathon
           </h1>
         </div>

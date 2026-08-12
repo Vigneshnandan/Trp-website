@@ -12,7 +12,7 @@ const desktopLinkClass = ({ isActive }) =>
 const mobileLinkClass = ({ isActive }) =>
   [
     'block border-t border-white/10 px-6 py-4 font-display text-sm font-bold uppercase tracking-widest transition-colors duration-200',
-    isActive ? 'bg-accent text-ink' : 'text-white hover:text-accent',
+    isActive ? 'bg-accent text-white' : 'text-white hover:text-accent',
   ].join(' ')
 
 const ChevronIcon = ({ open }) => (
@@ -124,20 +124,22 @@ export default function Header() {
               <div
                 role="menu"
                 aria-label="Departments"
-                className="absolute right-0 top-full mt-3 w-80 rounded-xl border-2 border-accent bg-white p-3 shadow-2xl shadow-black/30"
+                className="absolute right-0 top-full pt-3"
               >
-                <p className="eyebrow px-3 pt-2 text-ink/50">Programmes</p>
-                <div role="none" className="mt-1">
-                  {departments.map((dept) => (
-                    <Link
-                      key={dept.slug}
-                      to={`/departments/${dept.slug}`}
-                      role="menuitem"
-                      className="block rounded-lg px-3 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors duration-150 hover:bg-accent hover:text-ink"
-                    >
-                      {dept.name}
-                    </Link>
-                  ))}
+                <div className="w-80 rounded-xl border-2 border-accent bg-white p-3 shadow-2xl shadow-black/30">
+                  <p className="eyebrow px-3 pt-2 text-ink/50">Programmes</p>
+                  <div role="none" className="mt-1">
+                    {departments.map((dept) => (
+                      <Link
+                        key={dept.slug}
+                        to={`/departments/${dept.slug}`}
+                        role="menuitem"
+                        className="block rounded-lg px-3 py-2.5 font-display text-sm font-bold uppercase tracking-wide text-ink transition-colors duration-150 hover:bg-accent hover:text-white"
+                      >
+                        {dept.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -169,7 +171,7 @@ export default function Header() {
             onClick={() => setMobileDeptsOpen((v) => !v)}
             aria-expanded={mobileDeptsOpen}
             className={`flex w-full items-center justify-between border-t border-white/10 px-6 py-4 font-display text-sm font-bold uppercase tracking-widest transition-colors duration-200 ${
-              mobileDeptsOpen ? 'bg-accent text-ink' : 'text-white hover:text-accent'
+              mobileDeptsOpen ? 'bg-accent text-white' : 'text-white hover:text-accent'
             }`}
           >
             Departments
