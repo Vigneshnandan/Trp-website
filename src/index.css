@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #000000;
+  --color-accent: #f2e63d;
+  --color-cream: #f7f5f0;
+
+  --font-display: "Archivo", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-btn: 2px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+
+  :where(a, button):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-6;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-ink px-8 py-3.5 font-display text-sm font-bold uppercase tracking-widest text-white transition duration-200 ease-out hover:scale-105 hover:bg-accent hover:text-ink;
+  }
+
+  .card-outline {
+    @apply rounded-2xl border-2 border-accent bg-white p-8 shadow-sm transition duration-200 ease-out hover:scale-[1.03] hover:border-ink hover:shadow-md;
+  }
+
+  .hero-accent {
+    @apply bg-accent;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs font-bold uppercase tracking-[0.2em];
+  }
+}
