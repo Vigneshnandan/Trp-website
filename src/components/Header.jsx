@@ -87,7 +87,7 @@ export default function Header() {
             className="block h-10 w-auto object-contain sm:h-12 md:h-14"
           />
           <span className="flex min-w-0 flex-col justify-center leading-none">
-            <span className="font-display text-sm font-black uppercase tracking-tight text-white transition-colors duration-200 hover:text-accent sm:text-lg">
+            <span className="font-display text-sm font-black tracking-tight text-white transition-colors duration-200 hover:text-accent sm:text-lg">
               {SITE_NAME}
             </span>
             <span className="mt-1 text-[0.6rem] font-bold uppercase tracking-[0.28em] text-accent sm:text-[0.65rem]">

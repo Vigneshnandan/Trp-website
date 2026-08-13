@@ -73,7 +73,10 @@ export const departmentContent = {
         marking: ABL_MARKING,
         assessmentParagraphs: [
           'This progressive assessment mechanism encourages students to actively participate, strive for higher achievement, and advance through the successive rounds, thereby promoting healthy competition, motivation, and continuous improvement.',
-          'In this ABL framework, each academic year is assigned a specific mission focused on the progressive transformation of students towards their chosen career paths. These year-wise missions define clear developmental goals and guide students in systematically building the knowledge, skills, practical competencies, and professional capabilities required for their future careers.',
+          {
+            text: 'In this ABL framework, each academic year is assigned a specific mission focused on the progressive transformation of students towards their chosen career paths. These year-wise missions define clear developmental goals and guide students in systematically building the knowledge, skills, practical competencies, and professional capabilities required for their future careers.',
+            italic: true,
+          },
         ],
         missionsHeading: 'Year-wise Missions',
         missions,

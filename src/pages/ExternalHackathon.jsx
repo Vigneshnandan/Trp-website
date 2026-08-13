@@ -130,7 +130,7 @@ function HackathonCard({ hackathon }) {
           ))}
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-ink/70 sm:text-[1.05rem]">
+        <p className="mt-4 text-base leading-relaxed text-ink/70 sm:text-lg">
           {hackathon.description}
         </p>
 
@@ -174,7 +174,7 @@ export default function ExternalHackathon() {
             aspect="21/9"
             placeholder={false}
           />
-          <h1 className="text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
+          <h1 className="text-4xl font-black leading-[1.05] tracking-tight text-ink sm:text-6xl">
             External Hackathon
           </h1>
         </div>

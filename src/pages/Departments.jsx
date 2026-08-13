@@ -3,8 +3,6 @@ import ProgrammeCard from '../components/ProgrammeCard'
 import ImageBlock from '../components/ImageBlock'
 
 export default function Departments() {
-  const [featured, ...rest] = departments
-
   return (
     <section className="container-site py-20 sm:py-24">
       <ImageBlock
@@ -14,17 +12,14 @@ export default function Departments() {
         placeholder={false}
       />
 
-      <h1 className="text-4xl font-black uppercase leading-tight text-ink sm:text-5xl">
+      <h1 className="text-4xl font-black leading-tight text-ink sm:text-5xl">
         Departments
       </h1>
 
-      <div className="mt-12 space-y-8">
-        <ProgrammeCard dept={featured} featured placeholder={false} />
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {rest.map((dept) => (
-            <ProgrammeCard key={dept.slug} dept={dept} placeholder={false} />
-          ))}
-        </div>
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+        {departments.map((dept) => (
+          <ProgrammeCard key={dept.slug} dept={dept} />
+        ))}
       </div>
     </section>
   )

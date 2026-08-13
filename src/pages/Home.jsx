@@ -43,15 +43,13 @@ const domains = [
 ]
 
 export default function Home() {
-  const [featured, ...rest] = departments
-
   return (
     <>
       <section className="hero-accent">
         <div className="container-site py-20 sm:py-28">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <div>
-              <h1 className="max-w-5xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-ink sm:text-6xl">
+              <h1 className="max-w-5xl text-3xl font-black leading-[1.05] tracking-tight text-ink sm:text-5xl">
                 Computer Science and Engineering and Allied Programs
               </h1>
               <p className="mt-10 max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
@@ -75,7 +73,11 @@ export default function Home() {
       </section>
 
       <section className="container-site py-20">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <h2 className="max-w-3xl text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
+          Core domains of computing branches
+        </h2>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {domains.map((domain, index) => (
             <article key={domain.title} className="card-outline flex flex-col">
               <ImageBlock
@@ -86,10 +88,10 @@ export default function Home() {
               <span className="eyebrow text-ink/40">
                 Domain {String(index + 1).padStart(2, '0')}
               </span>
-              <h2 className="mt-3 text-xl font-extrabold uppercase leading-snug text-ink">
+              <h2 className="mt-3 text-xl font-extrabold leading-snug text-ink">
                 {domain.title}
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-ink/70">
+              <p className="mt-4 text-base leading-relaxed text-ink/70">
                 {domain.body}
               </p>
             </article>
@@ -114,18 +116,15 @@ export default function Home() {
       </section>
 
       <section className="container-site pb-24">
-        <h2 className="max-w-3xl text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
+        <h2 className="max-w-3xl text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
           The four complementary undergraduate programmes of the Computing
           branches are:
         </h2>
 
-        <div className="mt-12 space-y-8">
-          <ProgrammeCard dept={featured} featured />
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {rest.map((dept) => (
-              <ProgrammeCard key={dept.slug} dept={dept} />
-            ))}
-          </div>
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+          {departments.map((dept) => (
+            <ProgrammeCard key={dept.slug} dept={dept} />
+          ))}
         </div>
       </section>
     </>

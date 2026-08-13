@@ -22,7 +22,7 @@ function PageHead({ dept }) {
         ← All Departments
       </Link>
       <span className="eyebrow mt-6 block text-ink/50">{dept.degree} Department</span>
-      <h1 className="mt-3 max-w-4xl text-3xl font-black uppercase leading-tight text-ink sm:text-5xl">
+      <h1 className="mt-3 text-3xl font-black leading-tight text-ink sm:text-4xl">
         {dept.name}
       </h1>
     </section>
@@ -32,7 +32,7 @@ function PageHead({ dept }) {
 function MissionBody({ mission }) {
   return (
     <>
-      <p className="max-w-3xl leading-relaxed text-ink/80">{mission.mission}</p>
+      <p className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">{mission.mission}</p>
       <div className="mt-6 border-t border-ink/10 pt-5">
         <p className="eyebrow text-ink/50">{mission.activitiesLabel}</p>
         <div className="mt-3">
@@ -50,27 +50,32 @@ function MissionsContent({ section, image }) {
   return (
     <div className="space-y-5">
       {section.intro.map((paragraph, index) => (
-        <p key={index} className="max-w-3xl leading-relaxed text-ink/80">
+        <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
           {paragraph}
         </p>
       ))}
 
-      <h3 className="max-w-3xl pt-6 text-xl font-extrabold uppercase leading-snug text-ink sm:text-2xl">
+      <h3 className="max-w-3xl pt-6 text-xl font-extrabold leading-snug text-ink sm:text-2xl">
         {section.subheading}
       </h3>
       {section.subparagraphs.map((paragraph, index) => (
-        <p key={index} className="max-w-3xl leading-relaxed text-ink/80">
+        <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
           {paragraph}
         </p>
       ))}
 
-      <div className="max-w-2xl pt-2">
+      <div className="max-w-3xl pt-6">
         <MarkingList items={section.marking} />
       </div>
 
       {section.assessmentParagraphs.map((paragraph, index) => (
-        <p key={index} className="max-w-3xl leading-relaxed text-ink/80">
-          {paragraph}
+        <p
+          key={index}
+          className={`max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg${
+            typeof paragraph === 'object' && paragraph.italic ? ' italic' : ''
+          }`}
+        >
+          {typeof paragraph === 'object' ? paragraph.text : paragraph}
         </p>
       ))}
 
@@ -83,7 +88,7 @@ function MissionsContent({ section, image }) {
           placeholder={false}
         />
       )}
-      <h3 className="pt-8 text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
+      <h3 className="pt-8 text-xl font-extrabold leading-snug text-ink sm:text-2xl">
         {section.missionsHeading}
       </h3>
 
@@ -123,7 +128,7 @@ function MissionsContent({ section, image }) {
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-base font-black text-white">
               {String(active + 1).padStart(2, '0')}
             </span>
-            <h4 className="font-display text-lg font-extrabold uppercase leading-snug text-ink sm:text-xl">
+            <h4 className="font-display text-lg font-extrabold leading-snug text-ink sm:text-xl">
               {section.missions[active].title}
             </h4>
           </div>
@@ -152,7 +157,7 @@ function MissionsContent({ section, image }) {
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent font-display text-sm font-black text-white">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="font-display text-base font-extrabold uppercase leading-snug text-ink">
+                  <span className="font-display text-base font-extrabold leading-snug text-ink">
                     {mission.title}
                   </span>
                 </span>
@@ -184,7 +189,7 @@ function SectionContent({ section, image }) {
     return (
       <div className="space-y-5">
         {section.paragraphs.map((paragraph, index) => (
-          <p key={index} className="max-w-3xl leading-relaxed text-ink/80">
+          <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
             {paragraph}
           </p>
         ))}
@@ -274,7 +279,7 @@ function LongBody({ dept, sections }) {
                     placeholder={false}
                   />
                 )}
-                <h2 className="text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
+<h2 className="text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
                   {section.heading}
                 </h2>
                 <div className="mt-6">
@@ -298,11 +303,11 @@ function ShortBody({ sections }) {
       <div className="mt-12 max-w-3xl">
         {sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="text-2xl font-extrabold uppercase leading-snug text-ink sm:text-3xl">
+            <h2 className="text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
               {section.heading}
             </h2>
             {section.paragraphs.map((paragraph, index) => (
-              <p key={index} className="mt-6 leading-relaxed text-ink/80">
+              <p key={index} className="mt-6 text-base leading-relaxed text-ink/80 sm:text-lg">
                 {paragraph}
               </p>
             ))}
@@ -322,7 +327,7 @@ export default function DepartmentDetail() {
     return (
       <section className="container-site py-24">
         <span className="eyebrow text-ink/50">Departments</span>
-        <h1 className="mt-3 text-4xl font-black uppercase leading-tight text-ink">
+        <h1 className="mt-3 text-4xl font-black leading-tight text-ink">
           Department not found
         </h1>
         <Link to="/departments" className="btn-primary mt-8">

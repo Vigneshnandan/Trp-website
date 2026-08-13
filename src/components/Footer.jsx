@@ -16,7 +16,7 @@ export default function Footer() {
           className="inline-flex flex-col justify-center leading-none"
           aria-label={`${SITE_NAME} — ${SITE_TAGLINE}, home`}
         >
-          <span className="font-display text-xl font-black uppercase tracking-tight text-white transition-colors duration-200 hover:text-accent">
+          <span className="font-display text-xl font-black tracking-tight text-white transition-colors duration-200 hover:text-accent">
             {SITE_NAME}
           </span>
           <span className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.28em] text-accent">
