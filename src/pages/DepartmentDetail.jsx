@@ -5,6 +5,10 @@ import { departmentContent } from '../data/departmentContent'
 import MarkingList from '../components/MarkingList'
 import PlaceholderBlock from '../components/PlaceholderBlock'
 import ImageBlock from '../components/ImageBlock'
+import CoreCurriculumSection from '../components/CoreCurriculumSection'
+import YearActivitiesSection from '../components/YearActivitiesSection'
+import SubjectButton from '../components/SubjectButton'
+import { yearWiseActivities } from '../data/aiDsActivityMapping'
 
 function PageHead({ dept }) {
   return (
@@ -30,13 +34,27 @@ function PageHead({ dept }) {
 }
 
 function MissionBody({ mission }) {
+  const year = yearWiseActivities.find((y) => y.yearLabel.includes(mission.title))
   return (
     <>
       <p className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">{mission.mission}</p>
       <div className="mt-6 border-t border-ink/10 pt-5">
         <p className="eyebrow text-ink/50">{mission.activitiesLabel}</p>
         <div className="mt-3">
-          <PlaceholderBlock />
+          {year ? (
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {year.subjects.map((subject) => (
+                <SubjectButton
+                  key={subject.name}
+                  name={subject.name}
+                  type={subject.type}
+                  mandatory={subject.mandatory}
+                />
+              ))}
+            </div>
+          ) : (
+            <PlaceholderBlock />
+          )}
         </div>
       </div>
     </>
@@ -199,6 +217,12 @@ function SectionContent({ section, image }) {
   if (section.kind === 'block') {
     return <PlaceholderBlock />
   }
+  if (section.kind === 'coreCurriculum') {
+    return <CoreCurriculumSection />
+  }
+  if (section.kind === 'yearActivities') {
+    return <YearActivitiesSection />
+  }
   if (section.kind === 'missions') {
     return <MissionsContent section={section} image={image} />
   }
@@ -300,17 +324,28 @@ function LongBody({ dept, sections }) {
 function ShortBody({ sections }) {
   return (
     <div className="container-site pb-24">
-      <div className="mt-12 max-w-3xl">
+      <div className="mt-12 space-y-16">
         {sections.map((section) => (
           <section key={section.heading}>
             <h2 className="text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
               {section.heading}
             </h2>
-            {section.paragraphs.map((paragraph, index) => (
-              <p key={index} className="mt-6 text-base leading-relaxed text-ink/80 sm:text-lg">
-                {paragraph}
-              </p>
-            ))}
+            {section.kind === 'paragraphs' || section.paragraphs ? (
+              <div className="max-w-3xl">
+                {section.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="mt-6 text-base leading-relaxed text-ink/80 sm:text-lg"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <div className="mt-6">
+                <SectionContent section={section} />
+              </div>
+            )}
           </section>
         ))}
       </div>

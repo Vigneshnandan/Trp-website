@@ -57,8 +57,7 @@ export const departmentContent = {
         id: 'curriculum',
         label: 'Core Curriculum',
         heading: 'Core Curriculum Structure',
-        kind: 'block',
-        block: placeholder,
+        kind: 'coreCurriculum',
       },
       {
         id: 'missions',
