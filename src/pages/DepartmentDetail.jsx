@@ -51,7 +51,6 @@ function MissionBody({ mission }) {
         )}
       </p>
       <div className="mt-6 border-t border-ink/10 pt-5">
-        <p className="eyebrow text-ink/50">{mission.activitiesLabel}</p>
         <div className="mt-3">
           {year ? (
             <ActivityYearSelector yearActivities={yearWiseActivities} missionTitle={mission.title} />

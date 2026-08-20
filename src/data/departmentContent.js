@@ -15,7 +15,6 @@ const missions = [
         { text: ' By the end of the academic year, students will be able to develop effective code for given use cases, build small-scale applications, and confidently participate in coding contests and technical challenges.' }
       ]
     },
-    activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
@@ -27,7 +26,6 @@ const missions = [
         { text: ' By the end of the academic year, students will be able to develop applications that address identified use cases or real-world footprints and actively participate in premier and industry-organized hackathons, such as the Smart India Hackathon (SIH), etc.' }
       ]
     },
-    activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
@@ -39,7 +37,6 @@ const missions = [
         { text: ' By the end of the academic year, students will be industry-ready by earning relevant industry certifications, completing internships, and actively participating in premier hackathons such as the Smart India Hackathon (SIH) and other industry-organized hackathon competitions.' }
       ]
     },
-    activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
@@ -51,7 +48,6 @@ const missions = [
         { text: ' By the end of the academic year, students will be able to identify and pursue their preferred career pathway by securing placement offers, gaining admission to higher studies, initiating a start-up, or preparing for careers in the government sector through competitive examinations such as GATE, IES, and UPSC.' }
       ]
     },
-    activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
 ]
