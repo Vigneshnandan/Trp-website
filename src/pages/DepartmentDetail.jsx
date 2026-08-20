@@ -240,6 +240,9 @@ function SectionContent({ section, image }) {
   if (section.kind === 'missions') {
     return <MissionsContent section={section} image={image} />
   }
+  if (section.kind === 'roadmap') {
+    return <ImageBlock slot={section.image.slot} alt={section.image.alt} aspect="16/9" />
+  }
   return null
 }
 

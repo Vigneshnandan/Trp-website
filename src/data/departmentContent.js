@@ -101,6 +101,16 @@ export const departmentContent = {
         missionsHeading: 'Year-wise Mission and Activity',
         missions,
       },
+      {
+        id: 'roadmap',
+        label: 'Roadmap',
+        heading: 'Semester-wise Skills Roadmap',
+        kind: 'roadmap',
+        image: {
+          slot: 'department-cse-roadmap',
+          alt: 'Semester-wise skills roadmap',
+        },
+      },
     ],
   },
 
