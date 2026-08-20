@@ -63,7 +63,7 @@ export const departmentContent = {
         kind: 'paragraphs',
         paragraphs: [
           {
-            text: 'The B.E. Computer Science and Engineering programme provides a strong foundation in computer science, programming, algorithms, databases, computer networks, operating systems, software engineering, and emerging technologies. Through ',
+            text: 'The B.Tech. Artificial Intelligence and Data Science Engineering programme provides a strong foundation in computer science, programming, algorithms, databases, computer networks, operating systems, software engineering, and emerging technologies. Through ',
             parts: [
               { text: 'Activity-Based Learning (ABL)', bold: true },
               { text: ', students are encouraged to translate theoretical concepts into practical solutions through coding, software development, real-world problem-solving, and industry-oriented projects.' }
@@ -132,7 +132,7 @@ export const departmentContent = {
       {
         heading: 'About the Programme',
         paragraphs: [
-          'The B.Tech. Artificial Intelligence and Data Science programme prepares students to transform data into meaningful insights and intelligent solutions. Through data-driven projects, analytics activities, visualization, predictive modelling, machine learning experiments, and industry-oriented case studies, students develop the ability to solve complex real-world problems using AI and data science.',
+          'The B.E. Computer Science and Engineering programme Engineering programme prepares students to transform data into meaningful insights and intelligent solutions. Through data-driven projects, analytics activities, visualization, predictive modelling, machine learning experiments, and industry-oriented case studies, students develop the ability to solve complex real-world problems using AI and data science.',
         ],
       },
     ],
