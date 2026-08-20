@@ -11,13 +11,7 @@ export const WHY_ABL_HEADING = 'Why participation in Activity Based Learning (AB
 export const WHY_ABL_PARAGRAPHS = [
   'Participation in the prescribed activity is mandatory for earning internal assessment (assignment) marks for each course. The assessment follows a progressive marking structure that recognizes students based on their level of participation and achievement.',
   'A student who participates in the activity is awarded 50% of the allotted marks. Students who successfully clear each subsequent round receive proportionately higher marks, while the winner is awarded 100% of the allotted marks.',
-  'For example, if an activity consists of two rounds to determine the winner, the marking scheme will be:',
-]
-
-export const ABL_MARKING = [
-  { round: 'Participation', marks: '50% of the allotted marks' },
-  { round: 'Clearing the first round', marks: '75% of the allotted marks' },
-  { round: 'Winner', marks: '100% of the allotted marks' },
+  'For example, if an activity consists of two rounds to determine the winner, the marking scheme will be: participation earns 50% of the allotted marks, clearing the first round earns 75% of the allotted marks, and the winner earns 100% of the allotted marks.',
 ]
 
 export const ABOUT_PLACEHOLDER =
