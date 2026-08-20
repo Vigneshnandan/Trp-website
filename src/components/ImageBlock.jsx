@@ -8,7 +8,7 @@ const ASPECT_CLASSES = {
   '21/9': 'aspect-21/9',
 }
 
-const ROUNDED = 'rounded-2xl'
+const ROUNDED = 'rounded-2xl border-2 border-black'
 
 function Placeholder({ alt, slot, aspectClass, aspectStyle, className }) {
   return (
@@ -44,6 +44,7 @@ export default function ImageBlock({
   className = '',
   eager = false,
   placeholder = true,
+  fit = 'cover',
 }) {
   const [failed, setFailed] = useState(false)
   const src = `/images/${slot}.jpg`
@@ -74,7 +75,7 @@ export default function ImageBlock({
       loading={eager ? 'eager' : 'lazy'}
       fetchPriority={eager ? 'high' : 'auto'}
       onError={() => setFailed(true)}
-      className={`w-full object-cover ${ROUNDED} ${aspectClass} ${className}`}
+      className={`w-full object-${fit} ${ROUNDED} ${aspectClass} ${className}`}
       style={aspectStyle}
     />
   )

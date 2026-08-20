@@ -7,7 +7,6 @@ import PlaceholderBlock from '../components/PlaceholderBlock'
 import ImageBlock from '../components/ImageBlock'
 import CoreCurriculumSection from '../components/CoreCurriculumSection'
 import YearActivitiesSection from '../components/YearActivitiesSection'
-import SubjectButton from '../components/SubjectButton'
 import { yearWiseActivities } from '../data/aiDsActivityMapping'
 
 function PageHead({ dept }) {
@@ -42,16 +41,13 @@ function MissionBody({ mission }) {
         <p className="eyebrow text-ink/50">{mission.activitiesLabel}</p>
         <div className="mt-3">
           {year ? (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {year.subjects.map((subject) => (
-                <SubjectButton
-                  key={subject.name}
-                  name={subject.name}
-                  type={subject.type}
-                  mandatory={subject.mandatory}
-                />
-              ))}
-            </div>
+            <ImageBlock
+              slot={`department-cse-mission-${mission.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}
+              alt={`${mission.title} activity image`}
+              aspect="16/9"
+              fit="contain"
+              className="mt-3"
+            />
           ) : (
             <PlaceholderBlock />
           )}
