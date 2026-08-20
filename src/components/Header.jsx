@@ -100,9 +100,6 @@ export default function Header() {
           <NavLink to="/" end className={desktopLinkClass}>
             About
           </NavLink>
-          <NavLink to="/hackathon" className={desktopLinkClass}>
-            External Hackathon
-          </NavLink>
 
           <div
             ref={dropdownRef}
@@ -151,6 +148,10 @@ export default function Header() {
               </div>
             )}
           </div>
+
+          <NavLink to="/hackathon" className={desktopLinkClass}>
+            External Hackathon
+          </NavLink>
         </nav>
 
         <button
@@ -168,9 +169,6 @@ export default function Header() {
         <nav className="border-t border-white/10 pb-4 md:hidden" aria-label="Primary mobile">
           <NavLink to="/" end className={mobileLinkClass}>
             About
-          </NavLink>
-          <NavLink to="/hackathon" className={mobileLinkClass}>
-            External Hackathon
           </NavLink>
 
           <button
@@ -198,6 +196,10 @@ export default function Header() {
               ))}
             </div>
           )}
+
+          <NavLink to="/hackathon" className={mobileLinkClass}>
+            External Hackathon
+          </NavLink>
         </nav>
       )}
     </header>

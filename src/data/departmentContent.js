@@ -8,29 +8,49 @@ const placeholder = {
 const missions = [
   {
     title: 'Freshman (Coder) Year',
-    mission:
-      'Mission: By the end of the academic year, students will be able to develop effective code for given use cases, build small-scale applications, and confidently participate in coding contests and technical challenges.',
+    mission: {
+      text: '',
+      parts: [
+        { text: 'Mission:', bold: true },
+        { text: ' By the end of the academic year, students will be able to develop effective code for given use cases, build small-scale applications, and confidently participate in coding contests and technical challenges.' }
+      ]
+    },
     activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
     title: 'Sophomore (Developer) Year',
-    mission:
-      'Mission: By the end of the academic year, students will be able to develop applications that address identified use cases or real-world footprints and actively participate in premier and industry-organized hackathons, such as the Smart India Hackathon (SIH), etc.',
+    mission: {
+      text: '',
+      parts: [
+        { text: 'Mission:', bold: true },
+        { text: ' By the end of the academic year, students will be able to develop applications that address identified use cases or real-world footprints and actively participate in premier and industry-organized hackathons, such as the Smart India Hackathon (SIH), etc.' }
+      ]
+    },
     activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
     title: 'Junior (Demonstrator) Year',
-    mission:
-      'Mission: By the end of the academic year, students will be industry-ready by earning relevant industry certifications, completing internships, and actively participating in premier hackathons such as the Smart India Hackathon (SIH) and other industry-organized hackathon competitions.',
+    mission: {
+      text: '',
+      parts: [
+        { text: 'Mission:', bold: true },
+        { text: ' By the end of the academic year, students will be industry-ready by earning relevant industry certifications, completing internships, and actively participating in premier hackathons such as the Smart India Hackathon (SIH) and other industry-organized hackathon competitions.' }
+      ]
+    },
     activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
   {
     title: 'Senior (Transformation) Year',
-    mission:
-      'Mission: By the end of the academic year, students will be able to identify and pursue their preferred career pathway by securing placement offers, gaining admission to higher studies, initiating a start-up, or preparing for careers in the government sector through competitive examinations such as GATE, IES, and UPSC.',
+    mission: {
+      text: '',
+      parts: [
+        { text: 'Mission:', bold: true },
+        { text: ' By the end of the academic year, students will be able to identify and pursue their preferred career pathway by securing placement offers, gaining admission to higher studies, initiating a start-up, or preparing for careers in the government sector through competitive examinations such as GATE, IES, and UPSC.' }
+      ]
+    },
     activitiesLabel: 'Activities planned for each core course:',
     activities: placeholder,
   },
@@ -46,7 +66,13 @@ export const departmentContent = {
         heading: 'About the Programme',
         kind: 'paragraphs',
         paragraphs: [
-          'The B.E. Computer Science and Engineering programme provides a strong foundation in computer science, programming, algorithms, databases, computer networks, operating systems, software engineering, and emerging technologies. Through Activity-Based Learning (ABL), students are encouraged to translate theoretical concepts into practical solutions through coding, software development, real-world problem-solving, and industry-oriented projects.',
+          {
+            text: 'The B.E. Computer Science and Engineering programme provides a strong foundation in computer science, programming, algorithms, databases, computer networks, operating systems, software engineering, and emerging technologies. Through ',
+            parts: [
+              { text: 'Activity-Based Learning (ABL)', bold: true },
+              { text: ', students are encouraged to translate theoretical concepts into practical solutions through coding, software development, real-world problem-solving, and industry-oriented projects.' }
+            ]
+          },
           'The Department follows a Learn–Practice–Create–Innovate approach, integrating Activity-Based Learning across the curriculum to bridge the gap between academic knowledge and industry expectations. Students work collaboratively, communicate ideas, apply technologies to real-world challenges, develop prototypes, and present their solutions.',
           'The nature of activities varies according to the learning outcomes of each course. Programming courses involve application development, mini-projects, coding challenges, and Codathons. Industry-Oriented Courses and courses on emerging technologies provide opportunities for students to learn through industry platforms such as Infosys, IBM, and other reputed learning portals, and earn relevant certifications. Skill Development Courses emphasize collaborative projects, hands-on practice, and participation in hackathons and technical competitions.',
           "The time devoted by students to such activities is recognized as Professional Development Hours (PDH) and is incorporated as Independent Learning Hours (ILH) in the course syllabus. In addition, industry interaction is an integral component of the programme through industrial visits, expert sessions, internships, industry-supported projects, and other professional engagement activities, thereby strengthening students' industry readiness.",
@@ -77,7 +103,7 @@ export const departmentContent = {
             italic: true,
           },
         ],
-        missionsHeading: 'Year-wise Missions',
+        missionsHeading: 'Year-wise Missions and activity',
         missions,
       },
     ],

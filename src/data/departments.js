@@ -1,10 +1,10 @@
 export const departments = [
   {
     slug: 'computer-science-engineering',
-    name: 'B.E. Computer Science and Engineering',
-    degree: 'B.E.',
+    name: 'B.Tech. Artificial Intelligence and Data Science',
+    degree: 'B.Tech.',
     imageSlot: 'programme-cse',
-    imageAlt: 'B.E. Computer Science and Engineering',
+    imageAlt: 'B.Tech. Artificial Intelligence and Data Science',
   },
   {
     slug: 'cse-artificial-intelligence-machine-learning',
@@ -15,10 +15,10 @@ export const departments = [
   },
   {
     slug: 'artificial-intelligence-data-science',
-    name: 'B.Tech. Artificial Intelligence and Data Science',
-    degree: 'B.Tech.',
+    name: 'B.E. Computer Science and Engineering',
+    degree: 'B.E.',
     imageSlot: 'programme-ai-ds',
-    imageAlt: 'B.Tech Artificial Intelligence and Data Science',
+    imageAlt: 'B.E. Computer Science and Engineering',
   },
   {
     slug: 'information-technology',

@@ -7,6 +7,7 @@ import PlaceholderBlock from '../components/PlaceholderBlock'
 import ImageBlock from '../components/ImageBlock'
 import CoreCurriculumSection from '../components/CoreCurriculumSection'
 import YearActivitiesSection from '../components/YearActivitiesSection'
+import ActivityYearSelector from '../components/ActivityYearSelector'
 import { yearWiseActivities } from '../data/aiDsActivityMapping'
 
 function PageHead({ dept }) {
@@ -36,18 +37,25 @@ function MissionBody({ mission }) {
   const year = yearWiseActivities.find((y) => y.yearLabel.includes(mission.title))
   return (
     <>
-      <p className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">{mission.mission}</p>
+      <p className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
+        {typeof mission.mission === 'string' ? (
+          mission.mission
+        ) : (
+          <>
+            {mission.mission.text}
+            {mission.mission.parts && mission.mission.parts.map((part, index) => (
+              <span key={index}>
+                {part.bold ? <strong>{part.text}</strong> : part.text}
+              </span>
+            ))}
+          </>
+        )}
+      </p>
       <div className="mt-6 border-t border-ink/10 pt-5">
         <p className="eyebrow text-ink/50">{mission.activitiesLabel}</p>
         <div className="mt-3">
           {year ? (
-            <ImageBlock
-              slot={`department-cse-mission-${mission.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}
-              alt={`${mission.title} activity image`}
-              aspect="16/9"
-              fit="contain"
-              className="mt-3"
-            />
+            <ActivityYearSelector yearActivities={yearWiseActivities} missionTitle={mission.title} />
           ) : (
             <PlaceholderBlock />
           )}
@@ -73,7 +81,12 @@ function MissionsContent({ section, image }) {
         {section.subheading}
       </h3>
       {section.subparagraphs.map((paragraph, index) => (
-        <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
+        <p
+          key={index}
+          className={`max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg ${
+            index > 1 ? 'mt-2' : ''
+          }`}
+        >
           {paragraph}
         </p>
       ))}
@@ -204,7 +217,18 @@ function SectionContent({ section, image }) {
       <div className="space-y-5">
         {section.paragraphs.map((paragraph, index) => (
           <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
-            {paragraph}
+            {typeof paragraph === 'string' ? (
+              paragraph
+            ) : (
+              <>
+                {paragraph.text}
+                {paragraph.parts && paragraph.parts.map((part, partIndex) => (
+                  <span key={partIndex}>
+                    {part.bold ? <strong>{part.text}</strong> : part.text}
+                  </span>
+                ))}
+              </>
+            )}
           </p>
         ))}
       </div>
