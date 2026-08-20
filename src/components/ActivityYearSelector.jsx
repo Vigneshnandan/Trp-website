@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ImageBlock from './ImageBlock'
+import PdfBlock from './PdfBlock'
 
 export default function ActivityYearSelector({ missionTitle }) {
   const [selectedYear, setSelectedYear] = useState(0)
@@ -26,11 +26,9 @@ export default function ActivityYearSelector({ missionTitle }) {
         ))}
       </div>
 
-      <ImageBlock
+      <PdfBlock
         slot={`department-cse-mission-${yearName}-r${yearLabels[selectedYear]}`}
-        alt={`${missionTitle} R ${yearLabels[selectedYear]} activity image`}
-        aspect="16/9"
-        fit="contain"
+        label={`${missionTitle} R ${yearLabels[selectedYear]} activities PDF`}
       />
     </div>
   )

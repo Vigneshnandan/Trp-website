@@ -59,3 +59,24 @@ Banner slot is computed as `department-{dept.slug}-banner` from the slug in
 
 > Note: `department-cse-curriculum` and `department-cse-year-missions` render only on the
 > B.E. CSE long page; the other three department pages are banner-only.
+
+## 7. Year Missions activity PDFs (`src/components/ActivityYearSelector.jsx`)
+
+Each Year Mission (Freshman/Sophomore/Junior/Senior) has an R2025 and R2026 tab. Each
+tab now renders a PDF instead of an image, sourced at `public/pdfs/{slot}.pdf` (the
+`slot` value drives the path in `src/components/PdfBlock.jsx`). Until a PDF is placed,
+a placeholder box is shown.
+
+| Slot | File path |
+| --- | --- |
+| `department-cse-mission-freshman-coder-year-r2025` | `public/pdfs/department-cse-mission-freshman-coder-year-r2025.pdf` |
+| `department-cse-mission-freshman-coder-year-r2026` | `public/pdfs/department-cse-mission-freshman-coder-year-r2026.pdf` |
+| `department-cse-mission-sophomore-developer-year-r2025` | `public/pdfs/department-cse-mission-sophomore-developer-year-r2025.pdf` |
+| `department-cse-mission-sophomore-developer-year-r2026` | `public/pdfs/department-cse-mission-sophomore-developer-year-r2026.pdf` |
+| `department-cse-mission-junior-demonstrator-year-r2025` | `public/pdfs/department-cse-mission-junior-demonstrator-year-r2025.pdf` |
+| `department-cse-mission-junior-demonstrator-year-r2026` | `public/pdfs/department-cse-mission-junior-demonstrator-year-r2026.pdf` |
+| `department-cse-mission-senior-transformation-year-r2025` | `public/pdfs/department-cse-mission-senior-transformation-year-r2025.pdf` |
+| `department-cse-mission-senior-transformation-year-r2026` | `public/pdfs/department-cse-mission-senior-transformation-year-r2026.pdf` |
+
+> The four `department-cse-mission-*-r2025.jpg` images in `public/images/` are no
+> longer used and can be deleted once their PDF replacements are in place.
