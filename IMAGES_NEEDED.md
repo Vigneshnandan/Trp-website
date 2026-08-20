@@ -55,6 +55,8 @@ Banner slot is computed as `department-{dept.slug}-banner` from the slug in
 | `department-artificial-intelligence-data-science-banner` | `public/images/department-artificial-intelligence-data-science-banner.jpg` | 21/9 | B.Tech Artificial Intelligence and Data Science |
 | `department-information-technology-banner` | `public/images/department-information-technology-banner.jpg` | 21/9 | B.Tech Information Technology |
 | `department-cse-curriculum` | `public/images/department-cse-curriculum.jpg` | 16/9 | Classroom and lab session |
+| `department-cse-curriculum-content` | `public/images/department-cse-curriculum-content.jpg` | 16/9 | Core Curriculum Structure - R 2025 |
+| `department-cse-curriculum-content-r2026` | `public/images/department-cse-curriculum-content-r2026.jpg` | 16/9 | Core Curriculum Structure - R 2026 |
 | `department-cse-year-missions` | `public/images/department-cse-year-missions.jpg` | 16/9 | Students at a coding hackathon |
 
 > Note: `department-cse-curriculum` and `department-cse-year-missions` render only on the

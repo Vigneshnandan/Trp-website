@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getDepartment } from '../data/departments'
 import { departmentContent } from '../data/departmentContent'
-import MarkingList from '../components/MarkingList'
 import PlaceholderBlock from '../components/PlaceholderBlock'
 import ImageBlock from '../components/ImageBlock'
 import CoreCurriculumSection from '../components/CoreCurriculumSection'
@@ -90,10 +89,6 @@ function MissionsContent({ section, image }) {
           {paragraph}
         </p>
       ))}
-
-      <div className="max-w-3xl pt-6">
-        <MarkingList items={section.marking} />
-      </div>
 
       {section.assessmentParagraphs.map((paragraph, index) => (
         <p

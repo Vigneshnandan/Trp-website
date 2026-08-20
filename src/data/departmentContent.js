@@ -1,4 +1,4 @@
-import { ABL_MARKING, WHY_ABL_HEADING, WHY_ABL_PARAGRAPHS } from './ablContent'
+import { WHY_ABL_HEADING, WHY_ABL_PARAGRAPHS } from './ablContent'
 
 const placeholder = {
   kind: 'placeholder',
@@ -82,7 +82,7 @@ export const departmentContent = {
       {
         id: 'curriculum',
         label: 'Core Curriculum',
-        heading: 'Core Curriculum Structure',
+        heading: 'Core Curriculum Structure- R 2025 (2025-2029)',
         kind: 'coreCurriculum',
       },
       {
@@ -95,7 +95,6 @@ export const departmentContent = {
         ],
         subheading: WHY_ABL_HEADING,
         subparagraphs: WHY_ABL_PARAGRAPHS,
-        marking: ABL_MARKING,
         assessmentParagraphs: [
           'This progressive assessment mechanism encourages students to actively participate, strive for higher achievement, and advance through the successive rounds, thereby promoting healthy competition, motivation, and continuous improvement.',
           {
@@ -103,7 +102,7 @@ export const departmentContent = {
             italic: true,
           },
         ],
-        missionsHeading: 'Year-wise Missions and activity',
+        missionsHeading: 'Year-wise Mission and Activity',
         missions,
       },
     ],
