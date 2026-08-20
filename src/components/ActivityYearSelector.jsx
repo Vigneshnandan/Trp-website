@@ -27,6 +27,7 @@ export default function ActivityYearSelector({ missionTitle }) {
       </div>
 
       <PdfBlock
+        key={selectedYear}
         slot={`department-cse-mission-${yearName}-r${yearLabels[selectedYear]}`}
         label={`${missionTitle} R ${yearLabels[selectedYear]} activities PDF`}
       />
