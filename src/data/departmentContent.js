@@ -82,7 +82,7 @@ export const departmentContent = {
       {
         id: 'curriculum',
         label: 'Core Curriculum',
-        heading: 'Core Curriculum Structure',
+        heading: 'Core Curriculum Structure- R 2025 (2025-2029)',
         kind: 'coreCurriculum',
       },
       {
@@ -103,7 +103,7 @@ export const departmentContent = {
             italic: true,
           },
         ],
-        missionsHeading: 'Year-wise Missions and activity',
+        missionsHeading: 'Year-wise Mission and Activity',
         missions,
       },
     ],

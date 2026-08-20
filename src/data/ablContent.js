@@ -6,7 +6,7 @@ export const LPC_APPROACH =
 
 export const LPC_KEYWORDS = ['Learn', 'Practice', 'Create', 'Innovate']
 
-export const WHY_ABL_HEADING = 'Why participation in Activity Based Learning is mandatory?'
+export const WHY_ABL_HEADING = 'Why participation in Activity Based Learning (ABL) is mandatory?'
 
 export const WHY_ABL_PARAGRAPHS = [
   'Participation in the prescribed activity is mandatory for earning internal assessment (assignment) marks for each course. The assessment follows a progressive marking structure that recognizes students based on their level of participation and achievement.',
