@@ -69,13 +69,7 @@ function MissionsContent({ section, image }) {
 
   return (
     <div className="space-y-5">
-      {section.intro.map((paragraph, index) => (
-        <p key={index} className="max-w-3xl text-base leading-relaxed text-ink/80 sm:text-lg">
-          {paragraph}
-        </p>
-      ))}
-
-      <h3 className="max-w-3xl pt-6 text-xl font-extrabold leading-snug text-ink sm:text-2xl">
+      <h3 className="max-w-3xl text-xl font-extrabold leading-snug text-ink sm:text-2xl">
         {section.subheading}
       </h3>
       {section.subparagraphs.map((paragraph, index) => (
@@ -109,7 +103,10 @@ function MissionsContent({ section, image }) {
           placeholder={false}
         />
       )}
-      <h3 className="pt-8 text-xl font-extrabold leading-snug text-ink sm:text-2xl">
+      <h2 className="pt-8 text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
+        {section.heading}
+      </h2>
+      <h3 className="text-xl font-extrabold leading-snug text-ink sm:text-2xl">
         {section.missionsHeading}
       </h3>
 
@@ -320,9 +317,11 @@ function LongBody({ dept, sections }) {
                     placeholder={false}
                   />
                 )}
-<h2 className="text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
-                  {section.heading}
-                </h2>
+                {section.kind !== 'missions' && (
+                  <h2 className="text-2xl font-extrabold leading-snug text-ink sm:text-3xl">
+                    {section.heading}
+                  </h2>
+                )}
                 <div className="mt-6">
                   <SectionContent
                     section={section}
