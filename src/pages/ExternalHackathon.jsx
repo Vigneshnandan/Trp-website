@@ -3,20 +3,26 @@ import ImageBlock from '../components/ImageBlock'
 
 const hackathons = [
   {
-    title: 'TCS CodeVita (Season 13)',
-    organizer: 'Tata Consultancy Services',
+    title: 'HackWithIndia 2027',
+    organizer: 'HackWithIndia + Industry Partners',
     badges: ['National', 'Upcoming'],
-    audience: ['CSE/AIDS/AIML/IT', 'ECE'],
-    details: ['Reg: Sep 2025', 'Job/PPI linked', 'Opens Sep 2025'],
+    audience: ['CSE/AIDS/AIML/IT', 'ECE', 'EEE'],
+    details: ['Multiple events throughout 2027', 'Job/PPI linked', 'Opens Nov 2026'],
     description:
-      'Competitive coding, algorithms, data structures, and graph problems.',
+      'Open innovation, AI, sustainability, fintech, health, social impact',
     rounds: [
-      'R1: Pre-Qualifier (24-hr, 6 Qs)',
-      'R2: Qualifier (6-hr, 6 Qs)',
-      'R3: Final Round',
-      'R4: Grand Finale (in-person)',
+      'R1: Registration (Rolling)',
+      'R2: Online Hackathon (24-48h...)',
+      'R3: Demo/Hiring Stage',
     ],
-    highlight: '$20,000 top 3 - $10k / $6k / $4k',
+    highlight: 'Cash prizes + hiring opportunities from sponsor companies',
+    roundStructure: '3 rounds: Registration → 24-48hr online hackathon with problem statements from industry sponsors → Demo stage + potential hiring consideration. Pan India, fully virtual format. Multiple themed editions per year. Teams of 1-5.',
+    perksValue: 'Industry sponsor hiring pipeline, flexible participation, beginner-friendly platform',
+    pastSolutions: {
+      ps: 'AI-based crop disease detection (AgriTech)',
+      solution: 'MobileNet + React Native app for offline-capable plant disease diagnosis'
+    },
+    proTip: 'Good first hackathon — low entry barrier, multiple chances through the year. Strong base to build portfolio from.'
   },
   {
     title: 'Microsoft Imagine Cup 2027',
@@ -83,6 +89,7 @@ const hackathons = [
 ]
 
 function HackathonCard({ hackathon }) {
+
   return (
     <article className="card-outline flex h-full flex-col p-0 overflow-hidden">
       <div className="flex items-start justify-between gap-4 border-b border-ink/10 px-5 py-4 sm:px-6">
@@ -152,12 +159,14 @@ function HackathonCard({ hackathon }) {
           {hackathon.highlight}
         </p>
 
-        <button
-          type="button"
+        <a
+          href="https://srm-trp-career-hub.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 self-start text-sm font-bold uppercase tracking-widest text-[#9a6a00] transition-colors duration-200 hover:text-ink"
         >
-          Show details ▾
-        </button>
+          Show details →
+        </a>
       </div>
     </article>
   )
