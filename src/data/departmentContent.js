@@ -86,11 +86,11 @@ export const departmentContent = {
         label: 'Year Missions',
         heading: 'Activities Mapped with Curriculum During Four Years of Study',
         kind: 'missions',
-        intro: [
-          "As we adopt ABL, Students' participation in activities are considered as mandatory for core courses.",
-        ],
         subheading: WHY_ABL_HEADING,
-        subparagraphs: WHY_ABL_PARAGRAPHS,
+        subparagraphs: [
+          "As we adopt ABL, Students' participation in activities are considered as mandatory for core courses.",
+          ...WHY_ABL_PARAGRAPHS,
+        ],
         assessmentParagraphs: [
           'This progressive assessment mechanism encourages students to actively participate, strive for higher achievement, and advance through the successive rounds, thereby promoting healthy competition, motivation, and continuous improvement.',
           {
