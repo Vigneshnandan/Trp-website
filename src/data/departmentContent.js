@@ -104,11 +104,21 @@ export const departmentContent = {
       {
         id: 'roadmap',
         label: 'Roadmap',
-        heading: 'Semester-wise Skills Roadmap',
+        heading: 'Semester-wise Skills Roadmap R2025',
         kind: 'roadmap',
         image: {
           slot: 'department-cse-roadmap',
           alt: 'Semester-wise skills roadmap',
+        },
+      },
+      {
+        id: 'roadmap-r2026',
+        label: 'Roadmap R2026',
+        heading: 'Semester-wise Skills Roadmap R2026',
+        kind: 'roadmap',
+        image: {
+          slot: 'department-cse-roadmap-r2026',
+          alt: 'Semester-wise skills roadmap R2026',
         },
       },
     ],
